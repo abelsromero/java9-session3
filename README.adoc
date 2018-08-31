@@ -1,0 +1,28 @@
+= Java 9 overview (The Good, the Bad and the rest)
+:toc:
+:icons: font
+
+This repository contains the code examples used for the sessions done on the 30th of August 2018 (Brussels).
+
+== Usage
+
+This repo just uses Maven 3 to define it's structure and manage dependencies.
+
+Important, make sure not only your IDE works with a Java 9+ JDK, but also that the language level is set also.
+This project has been only tested in IntelliJ which recognizes and auto-configures the level based on `maven-compiler-plugin` configuration found in the parent pm.
+
+== Code projects
+
+The repository contains 4 projects:
+
+* `the-good`: contains simple code examples related to the first part of the presentation.
+Each class of this project contains an executable `main` methods.
+* `modules-core`, `modules-uses`, `modules-services-provide`: Java 9 modularized projects.
+** `core` provides basic components to `uses`
+** `service-prover` provides a service to `uses` using the new ServiceLoader capabilities.
++
+Use the Main classes found in `org.digit.modules.imports` package to run the examples.
+
+== Lessons learnt
+
+* If a module name contains a language reserved word (e.g. uses, required, int), it will complain just saying "compilation error".
